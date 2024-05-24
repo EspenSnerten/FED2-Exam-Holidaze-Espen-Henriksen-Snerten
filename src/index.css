@@ -72,39 +72,25 @@ textarea {
 }
 
 .auth-bg {
-  background-image: url("public/auth-bg.jpg");
+  background-image: url('/auth-bg.jpg');
   background-position: center;
   background-size: cover;
 }
 
 .auth-bg-blur {
-  background-image: url("public/auth-bg-blur.jpg");
+  background-image: url('/auth-bg-blur.jpg');
   background-position: center;
   background-size: cover;
 }
 
 .header-bg {
-  background-image: url("public/header-bg.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-@media (min-width: 1280px) {
-  .auth-bg-blur {
-    background-image: url("public/auth-bg-blur.jpg");
-    background-position: center;
-    background-size: cover;
-  }
-}
-
-.auth-bg-blur {
-  background-image: url("public/auth-bg-blur.jpg");
+  background-image: url('/header-bg.jpg');
   background-position: center;
   background-size: cover;
 }
 
 .hero-bg {
-  background-image: url("public/hero-bg.jpg");
+  background-image: url('/hero-bg.jpg');
   background-position: center;
   background-size: cover;
 }
