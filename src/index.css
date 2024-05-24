@@ -2,3 +2,192 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "ADAM CG PRO";
+  src: url("./assets/fonts/ADAM.CG PRO.otf") format("opentype");
+}
+
+body {
+  background-color: #f9fcff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+button,
+input,
+select,
+textarea {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  letter-spacing: 0.05em;
+}
+
+.custom-shadow {
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.pronounced-txt {
+  font-family: ADAM CG PRO;
+}
+
+.pronounced-txt-color {
+  color: #1b67ad;
+}
+
+.pronounced-txt-width {
+  letter-spacing: 0.4em;
+}
+
+.primary-txt1 {
+  color: #646464;
+}
+
+.primary-clr1 {
+  background-color: #f9fcff;
+}
+
+.primary-clr2 {
+  background-color: #646464;
+}
+
+.primary-clr3 {
+  background-color: #1b67ad;
+}
+
+.primary-clr4 {
+  background-color: #fdfdfd;
+}
+
+.auth-bg {
+  background-image: url("public/auth-bg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.auth-bg-blur {
+  background-image: url("public/auth-bg-blur.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.header-bg {
+  background-image: url("public/header-bg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media (min-width: 1280px) {
+  .auth-bg-blur {
+    background-image: url("public/auth-bg-blur.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.auth-bg-blur {
+  background-image: url("public/auth-bg-blur.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-bg {
+  background-image: url("public/hero-bg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.form-group {
+  position: relative;
+  padding: 20px 0;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 0 0 5px;
+  display: block;
+  width: 100%;
+}
+
+.form-group label {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  position: absolute;
+  pointer-events: none;
+  top: 2px;
+  transform: translateY(25px);
+  transition: all 0.2s ease-in-out;
+  left: 5px;
+}
+
+.form-group input:valid,
+.form-group input:focus,
+.form-group textarea:valid,
+.form-group textarea:focus {
+  border-bottom-color: black;
+  outline: none;
+}
+
+.form-group input:valid + label,
+.form-group input:focus + label,
+.form-group textarea:valid + label,
+.form-group textarea:focus + label {
+  color: black;
+  font-size: 14px;
+  transform: translateY(0);
+}
+
+.auth-form {
+  display: flex;
+  position: relative;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: #ffffff70;
+  border-radius: 10px;
+}
+
+.auth-form::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  border: 15px solid transparent;
+  background: linear-gradient(
+      135deg,
+      hsla(10, 78%, 68%, 1) 0%,
+      hsla(191, 91%, 31%, 1) 100%
+    )
+    border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+}
