@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { Fade } from "react-awesome-reveal";
+import RenderRating from "../../RenderRating";
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
 import DefaultMedia from "/default-placeholder.png";
 
 const LatestVenues = () => {
@@ -36,24 +35,6 @@ const LatestVenues = () => {
 
     fetchVenues();
   }, []);
-
-  const renderRating = (rating) => {
-    return (
-      <div className="flex">
-        {Array.from({ length: 5 }, (_, index) => (
-          <FontAwesomeIcon
-            key={index}
-            icon={faStar}
-            className={
-              index < rating
-                ? "text-sky-600 text-[14px]"
-                : "text-gray-200 text-[14px]"
-            }
-          />
-        ))}
-      </div>
-    );
-  };
 
   return (
     <Fade>
@@ -103,8 +84,8 @@ const LatestVenues = () => {
                   </div>
                   <div>
                     <div className="flex gap-6">
-                      <div className="rating rating-sm">
-                        {renderRating(venue.rating || 0)}
+                      <div className="my-auto rating rating-sm">
+                        <RenderRating rating={venue.rating} />
                       </div>
                       <p className="text-[10px] font-medium">
                         <span className="font-semibold text-[14px]">

@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { Fade } from "react-awesome-reveal";
 import Search from "../Search";
+import RenderRating from "../../RenderRating";
+import RenderFeatures from "../../RenderFeatures";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faStar,
   faUsers,
   faWifi,
   faSquareParking,
@@ -145,49 +146,6 @@ const VenueList = () => {
 
       return true;
     });
-  };
-
-  const renderRating = (rating) => {
-    return (
-      <div className="flex">
-        {Array.from({ length: 5 }, (_, index) => (
-          <FontAwesomeIcon
-            key={index}
-            icon={faStar}
-            className={
-              index < rating
-                ? "text-sky-600 text-[14px]"
-                : "text-gray-200 text-[14px]"
-            }
-          />
-        ))}
-      </div>
-    );
-  };
-
-  const renderFeatures = (meta) => {
-    return (
-      <div className="flex gap-2.5 my-auto ">
-        {meta.wifi && (
-          <FontAwesomeIcon icon={faWifi} className="primary-txt1 text-[20px]" />
-        )}
-        {meta.parking && (
-          <FontAwesomeIcon
-            icon={faSquareParking}
-            className="primary-txt1 text-[20px]"
-          />
-        )}
-        {meta.breakfast && (
-          <FontAwesomeIcon
-            icon={faUtensils}
-            className="primary-txt1 text-[20px]"
-          />
-        )}
-        {meta.pets && (
-          <FontAwesomeIcon icon={faPaw} className="primary-txt1 text-[20px]" />
-        )}
-      </div>
-    );
   };
 
   return (
@@ -528,10 +486,10 @@ const VenueList = () => {
                       <div className="flex flex-col gap-5">
                         <div className="flex gap-6">
                           <div className="rating rating-sm">
-                            {renderRating(venue.rating || 0)}
+                            <RenderRating rating={venue.rating} />
                           </div>
                         </div>
-                        <div className="max-w-[350px]  max-h-[85px]">
+                        <div className="max-w-[350px] min-h-[80px]  max-h-[85px]">
                           <p className=" text-[14px] font-light line-clamp-4	">
                             {venue.description
                               ? venue.description
@@ -548,7 +506,7 @@ const VenueList = () => {
                               {venue.maxGuests}
                             </span>
                           </p>
-                          {venue.meta && renderFeatures(venue.meta)}
+                          <RenderFeatures meta={venue.meta} />
                         </div>
                         <p className="text-[10px] font-medium">
                           <span className="font-semibold text-[14px]">
