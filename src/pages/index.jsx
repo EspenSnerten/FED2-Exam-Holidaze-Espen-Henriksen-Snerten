@@ -1,7 +1,7 @@
 import { Fade } from "react-awesome-reveal";
-import Hero from "../components/Hero";
 import Header from "../components/Layout/Header";
 import Footer from "../components/Layout/Footer";
+import Hero from "../components/Hero";
 import About from "../components/About";
 import Contact from "../components/Forms/Contact";
 import LatestVenues from "../components/Crud/LatestVenues";

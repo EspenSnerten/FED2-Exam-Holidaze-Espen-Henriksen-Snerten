@@ -57,7 +57,7 @@ const LatestVenues = () => {
 
   return (
     <Fade>
-      <div className="flex flex-row gap-2.5 max-w-[1150px] mx-auto px-4">
+      <div className="flex flex-row gap-2.5 max-w-[1150px] mb-4 mx-auto px-4">
         <h2 className="text-[20px] font-medium my-auto">Latest venues</h2>
         <div className="h-[3px] w-[60px] primary-clr3 my-auto"></div>
       </div>
