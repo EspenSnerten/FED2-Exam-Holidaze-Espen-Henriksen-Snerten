@@ -82,7 +82,7 @@ const Venue = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="flex max-w-[350px] w-full h-[170px] my-4 my-auto">
+                  <div className="flex max-w-[350px] w-full h-[170px] my-6">
                     <p className="font-light text-[14px] line-clamp-6">
                       {venue.description}
                     </p>

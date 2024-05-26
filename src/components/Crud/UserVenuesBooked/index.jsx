@@ -49,7 +49,7 @@ const UserVenuesBooked = () => {
             <table className="table text-black ">
               {/* head */}
               <thead>
-                <tr className="border-neutral-300">
+                <tr className="text-center border-neutral-300">
                   <th>
                     <span className="font-semibold text-black text-[16px]">
                       Venue name
