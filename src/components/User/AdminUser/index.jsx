@@ -106,28 +106,34 @@ const AdminUser = () => {
               </div>
             </dialog>
           </div>
-          <div className="absolute bottom-0 right-0">
-            <button
-              className="flex gap-1 p-1 px-3 text-white transition-all border-none rounded-tl-lg rounded-br-lg shadow-none outline-none jus primary-clr3 hover:bg-black"
-              onClick={() => document.getElementById("my_modal_4").showModal()}
-            >
-              <span className="my-auto">Add venue</span>
-              <FontAwesomeIcon
-                icon={faHouse}
-                className="text-white text-[16px] my-auto"
-              />
-            </button>
-            <dialog id="my_modal_4" className="modal">
-              <div className="mx-2 modal-box primary-clr4 w-fit">
-                <form method="dialog">
-                  <button className="absolute text-black btn btn-sm btn-circle btn-ghost right-2 top-2">
-                    ✕
-                  </button>
-                </form>
-                <CreateVenue />
+          {isVenueManager && (
+            <div className="absolute bottom-0 right-0">
+              <div className="absolute bottom-0 right-0">
+                <button
+                  className="flex w-[140px] gap-1 p-1 px-3 text-white transition-all border-none rounded-tl-lg rounded-br-lg shadow-none outline-none jus primary-clr3 hover:bg-black"
+                  onClick={() =>
+                    document.getElementById("my_modal_4").showModal()
+                  }
+                >
+                  <span className="my-auto">Add venue</span>
+                  <FontAwesomeIcon
+                    icon={faHouse}
+                    className="text-white text-[16px] my-auto"
+                  />
+                </button>
+                <dialog id="my_modal_4" className="modal">
+                  <div className="mx-2 modal-box primary-clr4 w-fit">
+                    <form method="dialog">
+                      <button className="absolute text-black btn btn-sm btn-circle btn-ghost right-2 top-2">
+                        ✕
+                      </button>
+                    </form>
+                    <CreateVenue />
+                  </div>
+                </dialog>
               </div>
-            </dialog>
-          </div>
+            </div>
+          )}
         </div>
         <div className="flex flex-col w-full mb-[15vh]">
           {isVenueManager ? (
