@@ -1,13 +1,15 @@
 import { Outlet } from "@tanstack/react-router";
 import "./App.css";
+import { Fade } from "react-awesome-reveal";
 
 function App() {
-
   return (
     <>
-      <main className="min-h-screen">
-        <Outlet />
-      </main>
+      <Fade>
+        <main>
+          <Outlet />
+        </main>
+      </Fade>
     </>
   );
 }
