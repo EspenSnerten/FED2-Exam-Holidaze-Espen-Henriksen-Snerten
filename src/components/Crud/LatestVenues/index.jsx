@@ -21,7 +21,6 @@ const LatestVenues = () => {
             }
           }
         );
-        console.log(response.data);
         if (Array.isArray(response.data.data)) {
           setVenues(response.data.data.slice(0, 3));
         } else {
